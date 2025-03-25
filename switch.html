@@ -7,19 +7,59 @@
 		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
 		<link href="assets/styles.css" rel="stylesheet">
 		<style>
-			/* Schrijf hier gewoon je CSS voor dit component */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 105px;
+  height: 60px;
+}
 
-			/* Hint: Dit component kun je volledig met HTML en CSS bouwen */
+.switch input {
+  opacity: 0;
+}
 
-			/* Hint: Hoe ver ga je qua styling? Vraag jezelf dit altijd af */
-		</style>
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #afafaf;
+  transition: 0.4s;
+  border-radius: 35px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  left: 5px;
+  bottom: 5px;
+  background-color: white;
+  transition: 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+}
+
+input:checked + .slider:before {
+  transform: translateX(45px);
+}
+
+</style>
 	</head>
 	<body>
 		<h1>Switch control</h1>
 		
-		<!-- Hint: Safari heeft hiervoor iets bedacht, maar is dat al een standaard?
-		     Wat gebeurt er in browsers die dat nog niet ondersteunen? -->
-
+		<label class="switch">
+			<input type="checkbox">
+			<span class="slider"></span>
+		</label>
+		  
 		<details open>
 			<summary>Demo video</summary>
 			<video src="assets/switch.mp4" width="119" height="67" controls muted autoplay loop>
